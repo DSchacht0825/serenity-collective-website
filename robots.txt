@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://serenitycollective.org/sitemap.xml
+
+# Block access to admin areas if they exist
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all search engines to crawl
+# This is a public ministry website with no restricted content

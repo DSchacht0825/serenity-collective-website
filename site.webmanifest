@@ -1,0 +1,22 @@
+{
+    "name": "Serenity Collective",
+    "short_name": "Serenity",
+    "description": "Faith-based community focused on restoration and healing through Jesus-centered 12-step recovery programs.",
+    "icons": [
+        {
+            "src": "/assets/images/Sserenity-collective-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/Sserenity-collective-logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#B6AEA3",
+    "background_color": "#FEFEFE",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/"
+}
