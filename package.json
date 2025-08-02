@@ -1,0 +1,10 @@
+{
+    "name": "serenity-collective-website",
+    "version": "1.0.0",
+    "description": "Serenity Collective Website",
+    "main": "index.html",
+    "dependencies": {},
+    "engines": {
+      "node": "18.x"
+    }
+  }
