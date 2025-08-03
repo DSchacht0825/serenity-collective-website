@@ -276,7 +276,10 @@
                 <h3>Join Our Community</h3>
                 <p class="form-description">Stay connected with our progress and be the first to know about pilot groups, events, and ways to get involved in this transformative ministry.</p>
                 
-                <form action="#" method="POST" class="brevo-signup-form" id="serenity-signup">
+                <form name="email-signup" method="POST" 
+  data-netlify="true" class="brevo-signup-form">
+                     <input type="hidden" name="form-name" 
+  value="email-signup" />
                     <div class="signup-form-grid">
                         <div class="form-group">
                             <label for="first-name" class="required">First Name</label>
