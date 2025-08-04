@@ -227,35 +227,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const bioData = {
         marissa: {
             name: 'Marissa Ower',
-            role: 'Curriculum consultant, and pilot facilitator',
+            role: 'Director of Curriculum, Training, and Design',
             photo: '../assets/images/marissa-ower.jpg',
-            bio: `<p>Marissa brings extensive experience in curriculum development and group facilitation to the Serenity Collective team. Her heart for seeing people find healing and freedom through Jesus is evident in her thoughtful approach to creating resources that meet people where they are.</p>
-                  <p>As both a curriculum consultant and pilot facilitator, Marissa helps shape the practical elements of our 12-step, Jesus-centered approach while also walking alongside participants in their journey toward wholeness.</p>
-                  <p>Her background in educational design and pastoral care uniquely equips her to create materials that are both theologically sound and practically applicable for people from all walks of life.</p>`
+            bio: `<p>Marissa Cahill Ower holds a B.A. in Psychology with a minor in Biblical Studies and is a certified Substance Abuse Counselor with over 11 years of experience walking alongside individuals in recovery. Marissa has been co-leading Serenity groups for the past five years and currently serves as the Director of Curriculum, Training, and Design.</p>
+                  <p>Marissa first encountered Jesus in a powerful and life-changing way at the age of 18, marking the beginning of her spiritual journey. Coming from a family with a long history of alcoholism and facing her own struggles with addiction and mental health, she later found deeper healing, growth, and restoration through working the 12 biblical steps in recovery.</p>
+                  <p>Now sober for 11 years, Marissa is passionate about helping others encounter the same hope and wholeness she has found in Christ. Through her role on the Serenity team, she develops curriculum and training that equips leaders and participants to grow in truth, grace, and a renewed identity in Jesus.</p>`
         },
         michael: {
             name: 'Michael Amodeo',
             role: 'Project manager and pilot facilitator',
             photo: '../assets/images/michael-amodeo.jpg',
-            bio: `<p>Michael serves as the organizational backbone of Serenity Collective, ensuring that our vision translates into effective, well-coordinated programs. His role as project manager involves overseeing the development and implementation of our Serenity Groups model.</p>
-                  <p>As a pilot facilitator, Michael brings both administrative excellence and pastoral heart to his work with participants. He understands that true transformation happens in the details - the careful preparation, the thoughtful follow-up, and the consistent presence that creates safety for vulnerable people.</p>
-                  <p>His commitment to excellence in project management serves the deeper purpose of creating space where people can encounter the healing presence of Jesus.</p>`
+            bio: `<p>Michael Amodeo is a Pastor and marketplace business owner. He has been in ministry serving the local Church, people in recovery, and assisting individuals/businesses with their finances from a Kingdom perspective for over 20 years. With a background in finance, accounting, sales expertise, and sobriety he provides spiritual direction, training, and coaching for many in their personal and career development.</p>
+                  <p>Michael has a Bachelors in Finance/Accounting and a Masters in Ministry. Michael has been sober from all mind-altering substances for over 20 years. Michael has been an integral part of this project based on his ministry and 12-step experience since the beginning over 3 years ago. He has experienced a charmed life beyond his wildest dreams due to his obedience to Christ, God's Word, and his intimate relationship with the Holy Spirit.</p>
+                  <p>Michael is passionate in helping others achieve freedom from addictions and coming alongside others in the marketplace so that business reflects Kingdom. For the Serenity Project, Michael is helping facilitate as the project manager coming alongside others so that the masses could experience belief and trust in Jesus and true freedom. He lives in Oceanside San Diego with his wife and is the Executive Pastor of Discovery Church and Vice President of Straight Shooter Heating and Cooling a local HVAC company.</p>`
         },
         daniel: {
             name: 'Daniel Schacht',
             role: 'Communications manager and pilot facilitator',
             photo: '../assets/images/daniel-schacht.jpg',
-            bio: `<p>Daniel is responsible for sharing the heart and vision of Serenity Collective with the broader community. As communications manager, he crafts the messaging that helps people understand what we're about and how they might connect with our mission.</p>
-                  <p>His work as a pilot facilitator gives him firsthand experience of the transformation that happens in Serenity Groups, which informs his ability to communicate authentically about our approach.</p>
-                  <p>Daniel's passion is helping people see that the Gospel really is good news - that Jesus meets us exactly where we are and invites us into a life of freedom, joy, and authentic community.</p>`
+            bio: `<p>Daniel Schacht serves as the Director of Outreach for North County at the San Diego Rescue Mission. He brings a unique combination of professional expertise and lived experience with homelessness and addiction, which deeply informs his compassionate and strategic approach to outreach.</p>
+                  <p>Over the past eight years, Daniel has served the Rescue Mission in various leadership roles, including as Director of the Mission Academy—a year-long, 300-bed residential recovery program supporting individuals experiencing homelessness and/or substance use disorders. In addition to his work at the Mission, Daniel is a certified life coach and has provided consulting services to several nonprofit organizations, offering guidance in program development, organizational strategy, and recovery support.</p>
+                  <p>Daniel also plays a key role in The Serenity Collective, a faith-based initiative committed to holistic healing and spiritual restoration. As a core contributor to The Serenity Project, he has helped lead its technical development and build meaningful partnerships to expand its impact.</p>`
         },
         chris: {
             name: 'Chris Kohlbry',
             role: 'Key initiator, team leader, fundraising manager, and facilitation trainer',
             photo: '../assets/images/chris-kohlbry.jpg',
-            bio: `<p>Chris is the visionary leader behind Serenity Collective, having initiated this work out of a deep conviction that the Church needs better resources for helping people find freedom and healing through Jesus.</p>
-                  <p>As team leader, Chris provides strategic direction and pastoral oversight for our entire initiative. His role as fundraising manager involves securing the resources necessary to develop and sustain this ministry.</p>
-                  <p>Perhaps most importantly, Chris serves as a facilitation trainer, equipping others to lead Serenity Groups with both competence and compassion. His heart is to see this approach spread to communities everywhere, creating networks of healing and hope centered on the person and work of Jesus Christ.</p>`
+            bio: `<p>Chris Kohlbry brings 48 years of personal sobriety and ministry experience dedicated in large part to those seeking restoration and ongoing recovery from addiction. Chris' expertise in developing small group community along with a dynamic commitment to seeing people healed by the grace of Jesus led to the first "Serenity" group over 25 years ago.</p>
+                  <p>Teaching Scripture and encouraging others to let Jesus love them has led Chris to explore serving and planting congregations with a variety of ministry expressions across the United States and the globe. Chris resides in Carlsbad, California with his wife, Pam.</p>
+                  <p>For the Serenity Project he is helping to bring leadership as a facilitation trainer and a fundraising initiator.</p>`
         },
         steve: {
             name: 'Steve Cahill',
@@ -269,9 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Mark Scandrette',
             role: 'Design and curriculum consultant, writer, and facilitation trainer',
             photo: '../assets/images/mark-scandrette.jpg',
-            bio: `<p>Mark brings decades of experience in spiritual formation, community building, and curriculum design to Serenity Collective. As a widely respected author and teacher, he provides theological depth and practical wisdom to our approach.</p>
-                  <p>His role as design and curriculum consultant involves shaping the overall framework of our 12-step, Jesus-centered approach, ensuring that it remains both faithful to scripture and relevant to contemporary struggles.</p>
-                  <p>As a writer and facilitation trainer, Mark helps create the resources that guide both participants and leaders through the journey of healing and transformation. His work is characterized by a rare combination of theological sophistication and practical accessibility.</p>`
+            bio: `<p>Mark Scandrette is an internationally recognized specialist in practical spiritual formation. With a background in both psychology and theology, he provides spiritual direction, leads practical discipleship groups, and trains and coaches leaders to facilitate and create new small group resources. Mark also teaches in the Doctoral Department at Fuller Seminary.</p>
+                  <p>He is the author of five books, including Practicing the Way of Jesus, The Ninefold Path of Jesus, FREE, and Belonging and Becoming: Creating a Thriving Family Culture. Mark is passionate about taking an honest and active approach to discipleship. He has experienced significant healing and growth through this process and supports others to apply the teachings of Jesus to needs in their everyday lives.</p>
+                  <p>For the Serenity Project, Mark is providing guidance on the design and facilitation of Serenity Groups. He lives in San Francisco with his family and is the executive director of ReIMAGINE: a center for living wisdom.</p>`
         }
     };
 
