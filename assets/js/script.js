@@ -259,11 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         steve: {
             name: 'Steve Cahill',
-            role: 'Technical support and ???',
+            role: 'Technical Support and Behind-the-Scenes Operations',
             photo: '../assets/images/steve-cahill.jpg',
-            bio: `<p>Steve provides essential technical support for Serenity Collective, ensuring that our digital infrastructure serves our mission effectively. His behind-the-scenes work makes it possible for us to connect with people, share resources, and coordinate our efforts.</p>
-                  <p>While his role may seem less visible than others, Steve's contribution is vital to our ability to reach people who are seeking healing and community. He understands that technology should serve human connection, not replace it.</p>
-                  <p>Steve's commitment to excellence in technical support reflects his heart for the mission - he wants to remove barriers that might prevent people from accessing the hope and healing available through Jesus.</p>`
+            bio: `<p>Steve Cahill brings over 30 years of experience in the semiconductor test industry, working as a seasoned Test Engineer specializing in Automated Test Equipment (ATE). His expertise includes writing complex test programs and developing associated hardware, and he holds both a Bachelor's and Master's degree in Electrical Engineering.</p>
+                  <p>Later in life, Steve experienced a powerful renewal of faith and became a devoted follower of Jesus. His spiritual journey has led him to actively serve his church and volunteer at various Christian ministries throughout Southern California.</p>
+                  <p>Within Serenity Collective, Steve plays a vital behind-the-scenes role, offering consistent support to the team and mission. His technical acumen, servant heart, and unwavering faith make him a valued member of the collective.</p>`
         },
         mark: {
             name: 'Mark Scandrette',
