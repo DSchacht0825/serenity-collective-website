@@ -34,7 +34,7 @@ header {
     padding: 1rem 0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     box-shadow: 0 2px 20px rgba(38, 37, 36, 0.15);
 }
 
@@ -2058,16 +2058,113 @@ footer {
     margin: 0 auto 2rem;
 }
 
+/* Mobile Navigation */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--off-white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10001;
+    min-height: 44px;
+    min-width: 44px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(182, 174, 163, 0.2);
+}
+
+.mobile-menu-overlay {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 280px;
+    max-width: calc(100vw - 40px);
+    background: var(--warm-white);
+    border: 1px solid var(--primary-beige);
+    z-index: 10000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem 0;
+    gap: 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    border-bottom: 1px solid rgba(182, 174, 163, 0.2);
+}
+
+.mobile-nav-links li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+    min-height: 44px;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+    color: var(--primary-beige);
+    background: rgba(182, 174, 163, 0.15);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 1rem 2rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .nav-menu {
-        gap: 1.5rem;
+        display: none;
+    }
+    
+    .nav-left, .nav-right {
+        display: none;
+    }
+    
+    .logo {
+        flex: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .hero-content h1,
@@ -2200,7 +2297,30 @@ footer {
         padding: 1.5rem 2rem 2rem;
     }
     
+    /* Better touch targets for mobile */
+    .bio-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        min-height: 44px; /* Apple recommended touch target */
+        min-width: 44px;
+    }
+    
+    .nav-menu a {
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .bio-close {
+        padding: 0.5rem;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
         top: 1rem;
         right: 1rem;
         font-size: 1.5rem;

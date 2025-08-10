@@ -1,42 +1,53 @@
 // Serenity Collective Website JavaScript
 
-// Mobile Navigation Toggle
+// Simple Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    // Create mobile menu toggle button if it doesn't exist
-    const nav = document.querySelector('nav');
-    const navMenu = document.querySelector('.nav-menu');
+    console.log('DOM loaded, looking for mobile menu elements');
     
-    // Add mobile menu toggle functionality
-    function createMobileToggle() {
-        const toggleButton = document.createElement('button');
-        toggleButton.className = 'mobile-toggle';
-        toggleButton.innerHTML = '☰';
-        toggleButton.setAttribute('aria-label', 'Toggle navigation menu');
+    const toggle = document.getElementById('mobileMenuToggle');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    
+    console.log('Toggle element:', toggle);
+    console.log('Overlay element:', overlay);
+    
+    if (toggle && overlay) {
+        console.log('Both elements found, adding click handler');
         
-        toggleButton.addEventListener('click', function() {
-            navMenu.classList.toggle('mobile-active');
-            toggleButton.innerHTML = navMenu.classList.contains('mobile-active') ? '✕' : '☰';
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Toggle clicked');
+            
+            if (overlay.classList.contains('active')) {
+                overlay.classList.remove('active');
+                console.log('Menu closed');
+            } else {
+                overlay.classList.add('active');
+                console.log('Menu opened');
+            }
         });
         
-        nav.appendChild(toggleButton);
-    }
-    
-    // Only create mobile toggle on smaller screens
-    if (window.innerWidth <= 768) {
-        createMobileToggle();
-    }
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        const existingToggle = document.querySelector('.mobile-toggle');
+        // Close when clicking on links
+        const links = overlay.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                overlay.classList.remove('active');
+                console.log('Menu closed via link click');
+            });
+        });
         
-        if (window.innerWidth <= 768 && !existingToggle) {
-            createMobileToggle();
-        } else if (window.innerWidth > 768 && existingToggle) {
-            existingToggle.remove();
-            navMenu.classList.remove('mobile-active');
-        }
-    });
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!toggle.contains(e.target) && !overlay.contains(e.target)) {
+                overlay.classList.remove('active');
+            }
+        });
+        
+    } else {
+        console.log('Mobile menu elements not found!');
+        console.log('Available elements with IDs:', Array.from(document.querySelectorAll('[id]')).map(el => el.id));
+    }
 });
 
 // Smooth scrolling for anchor links
@@ -177,49 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add CSS for mobile navigation
-document.addEventListener('DOMContentLoaded', function() {
-    const style = document.createElement('style');
-    style.textContent = `
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-            
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: #2c3e50;
-                flex-direction: column;
-                padding: 1rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            }
-            
-            .nav-menu.mobile-active {
-                display: flex;
-            }
-            
-            .nav-menu li {
-                margin: 0.5rem 0;
-            }
-        }
-    `;
-    
-    document.head.appendChild(style);
-});
+// Mobile navigation styles are now in CSS file
 
 // Team Bio Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -228,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
         marissa: {
             name: 'Marissa Ower',
             role: 'Director of Curriculum, Training, and Design',
-            photo: '../assets/images/marissa-ower.jpg',
+            photo: '../Images/marissa.jpg',
             bio: `<p>Marissa Cahill Ower holds a B.A. in Psychology with a minor in Biblical Studies and is a certified Substance Abuse Counselor with over 11 years of experience walking alongside individuals in recovery. Marissa has been co-leading Serenity groups for the past five years and currently serves as the Director of Curriculum, Training, and Design.</p>
                   <p>Marissa first encountered Jesus in a powerful and life-changing way at the age of 18, marking the beginning of her spiritual journey. Coming from a family with a long history of alcoholism and facing her own struggles with addiction and mental health, she later found deeper healing, growth, and restoration through working the 12 biblical steps in recovery.</p>
                   <p>Now sober for 11 years, Marissa is passionate about helping others encounter the same hope and wholeness she has found in Christ. Through her role on the Serenity team, she develops curriculum and training that equips leaders and participants to grow in truth, grace, and a renewed identity in Jesus.</p>`
@@ -236,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
         michael: {
             name: 'Michael Amodeo',
             role: 'Project manager and pilot facilitator',
-            photo: '../assets/images/michael-amodeo.jpg',
+            photo: '../Images/michael.jpg',
             bio: `<p>Michael Amodeo is a Pastor and marketplace business owner. He has been in ministry serving the local Church, people in recovery, and assisting individuals/businesses with their finances from a Kingdom perspective for over 20 years. With a background in finance, accounting, sales expertise, and sobriety he provides spiritual direction, training, and coaching for many in their personal and career development.</p>
                   <p>Michael has a Bachelors in Finance/Accounting and a Masters in Ministry. Michael has been sober from all mind-altering substances for over 20 years. Michael has been an integral part of this project based on his ministry and 12-step experience since the beginning over 3 years ago. He has experienced a charmed life beyond his wildest dreams due to his obedience to Christ, God's Word, and his intimate relationship with the Holy Spirit.</p>
                   <p>Michael is passionate in helping others achieve freedom from addictions and coming alongside others in the marketplace so that business reflects Kingdom. For the Serenity Project, Michael is helping facilitate as the project manager coming alongside others so that the masses could experience belief and trust in Jesus and true freedom. He lives in Oceanside San Diego with his wife and is the Executive Pastor of Discovery Church and Vice President of Straight Shooter Heating and Cooling a local HVAC company.</p>`
@@ -244,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         daniel: {
             name: 'Daniel Schacht',
             role: 'Communications manager and pilot facilitator',
-            photo: '../assets/images/daniel-schacht.jpg',
+            photo: '../Images/daniel.jpg',
             bio: `<p>Daniel Schacht serves as the Director of Outreach for North County at the San Diego Rescue Mission. He brings a unique combination of professional expertise and lived experience with homelessness and addiction, which deeply informs his compassionate and strategic approach to outreach.</p>
                   <p>Over the past eight years, Daniel has served the Rescue Mission in various leadership roles, including as Director of the Mission Academy—a year-long, 300-bed residential recovery program supporting individuals experiencing homelessness and/or substance use disorders. In addition to his work at the Mission, Daniel is a certified life coach and has provided consulting services to several nonprofit organizations, offering guidance in program development, organizational strategy, and recovery support.</p>
                   <p>Daniel also plays a key role in The Serenity Collective, a faith-based initiative committed to holistic healing and spiritual restoration. As a core contributor to The Serenity Project, he has helped lead its technical development and build meaningful partnerships to expand its impact.</p>`
@@ -252,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chris: {
             name: 'Chris Kohlbry',
             role: 'Key initiator, team leader, fundraising manager, and facilitation trainer',
-            photo: '../assets/images/chris-kohlbry.jpg',
+            photo: '../Images/chris.jpg',
             bio: `<p>Chris Kohlbry brings 48 years of personal sobriety and ministry experience dedicated in large part to those seeking restoration and ongoing recovery from addiction. Chris' expertise in developing small group community along with a dynamic commitment to seeing people healed by the grace of Jesus led to the first "Serenity" group over 25 years ago.</p>
                   <p>Teaching Scripture and encouraging others to let Jesus love them has led Chris to explore serving and planting congregations with a variety of ministry expressions across the United States and the globe. Chris resides in Carlsbad, California with his wife, Pam.</p>
                   <p>For the Serenity Project he is helping to bring leadership as a facilitation trainer and a fundraising initiator.</p>`
@@ -260,28 +229,34 @@ document.addEventListener('DOMContentLoaded', function() {
         steve: {
             name: 'Steve Cahill',
             role: 'Technical Support and Behind-the-Scenes Operations',
-            photo: '../assets/images/steve-cahill.jpg',
-            bio: `<p>Steve Cahill brings over 30 years of experience in the semiconductor test industry, working as a seasoned Test Engineer specializing in Automated Test Equipment (ATE). His expertise includes writing complex test programs and developing associated hardware, and he holds both a Bachelor's and Master's degree in Electrical Engineering.</p>
-                  <p>Later in life, Steve experienced a powerful renewal of faith and became a devoted follower of Jesus. His spiritual journey has led him to actively serve his church and volunteer at various Christian ministries throughout Southern California.</p>
-                  <p>Within Serenity Collective, Steve plays a vital behind-the-scenes role, offering consistent support to the team and mission. His technical acumen, servant heart, and unwavering faith make him a valued member of the collective.</p>`
+            photo: '../Images/steve.jpg',
+            bio: `<p>Steve Cahill has spent over 30 years in the semiconductor industry as a Test Engineer, specializing in writing test programs and developing hardware for the Automated Test Equipment (ATE) sector. He holds both Bachelor's and Master's degrees in Electrical Engineering.</p>
+                  <p>While Steve's professional path has been highly technical, his heart has been drawn toward a different kind of mission: walking alongside those who struggle with addiction. Later in life, Steve renewed his faith as a devoted follower of Jesus—a turning point that reshaped his priorities and deepened his compassion for others.</p>
+                  <p>Though he has no formal training in the recovery field, Steve's life has been touched by close friends and loved ones who have battled substance abuse—and overcome it. Their journeys, especially those rooted in Christ-centered recovery, have deeply inspired him. Today, Steve actively serves through his church and volunteers at Christian events across Southern California, seeking to support and uplift those on the path to healing.</p>`
         },
         mark: {
             name: 'Mark Scandrette',
             role: 'Design and curriculum consultant, writer, and facilitation trainer',
-            photo: '../assets/images/mark-scandrette.jpg',
+            photo: '../Images/mark-1.jpg',
             bio: `<p>Mark Scandrette is an internationally recognized specialist in practical spiritual formation. With a background in both psychology and theology, he provides spiritual direction, leads practical discipleship groups, and trains and coaches leaders to facilitate and create new small group resources. Mark also teaches in the Doctoral Department at Fuller Seminary.</p>
                   <p>He is the author of five books, including Practicing the Way of Jesus, The Ninefold Path of Jesus, FREE, and Belonging and Becoming: Creating a Thriving Family Culture. Mark is passionate about taking an honest and active approach to discipleship. He has experienced significant healing and growth through this process and supports others to apply the teachings of Jesus to needs in their everyday lives.</p>
                   <p>For the Serenity Project, Mark is providing guidance on the design and facilitation of Serenity Groups. He lives in San Francisco with his family and is the executive director of ReIMAGINE: a center for living wisdom.</p>`
         }
     };
 
-    // Get modal elements
+    // Get modal elements with safety checks
     const modal = document.getElementById('bio-modal');
     const bioPhoto = document.getElementById('bio-photo');
     const bioName = document.getElementById('bio-name');
     const bioRole = document.getElementById('bio-role');
     const bioContent = document.getElementById('bio-content');
     const closeBtn = document.querySelector('.bio-close');
+
+    // Early return if modal elements don't exist
+    if (!modal || !bioPhoto || !bioName || !bioRole || !bioContent || !closeBtn) {
+        console.log('Bio modal elements not found on this page');
+        return;
+    }
 
     // Add click event listeners to all bio buttons
     document.querySelectorAll('.bio-button').forEach(button => {
@@ -302,6 +277,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show modal
                 modal.style.display = 'block';
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Focus on modal for better accessibility
+                modal.setAttribute('tabindex', '-1');
+                modal.focus();
             }
         });
     });
