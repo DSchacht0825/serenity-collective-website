@@ -100,9 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate form submission (replace with actual form handling)
-            showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-            this.reset();
+            // Submit to contact form handler
+            submitContactForm(formObject, this);
         });
     }
 });
@@ -413,6 +412,54 @@ async function submitToBrevo(contactData, form) {
         // Reset button
         const submitBtn = form.querySelector('.signup-submit-btn');
         submitBtn.textContent = 'Join Our Community';
+        submitBtn.disabled = false;
+    }
+}
+
+// Function to submit contact form data
+async function submitContactForm(formData, form) {
+    try {
+        // Show loading state
+        const submitBtn = form.querySelector('.submit-button');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Send data to Netlify function
+        const response = await fetch('/.netlify/functions/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                subject: formData.subject,
+                message: formData.message
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+            showNotification(result.message || 'Thank you for your message! We\'ll get back to you within 24 hours.', 'success');
+            form.reset();
+        } else {
+            throw new Error(result.error || 'Failed to send message');
+        }
+        
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        
+    } catch (error) {
+        console.error('Contact form error:', error);
+        showNotification('Something went wrong. Please try again or contact us directly at info@serenitycollective.org', 'error');
+        
+        // Reset button
+        const submitBtn = form.querySelector('.submit-button');
+        submitBtn.textContent = 'Send Message';
         submitBtn.disabled = false;
     }
 }

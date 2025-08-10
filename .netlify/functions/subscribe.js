@@ -1,3 +1,5 @@
+// Email subscription handler for Serenity Collective
+// Requires BREVO_API_KEY environment variable to be set in Netlify
 exports.handler = async (event, context) => {
     // CORS headers
     const headers = {
@@ -52,9 +54,7 @@ exports.handler = async (event, context) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'api-key':
-  'xkeysib-e96ed4688789f508b135f9a2f0bbc4227c65c8bccf348
-  d913f1cc501a39b5e79-pyMvnZdpeB1qk5Y5'
+          'api-key': process.env.BREVO_API_KEY
         },
         body: JSON.stringify(contactData)
       });
