@@ -2136,18 +2136,36 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Override container max-widths for full mobile usage */
+    body, html {
+        width: 100% !important;
+        overflow-x: hidden;
+    }
+    
+    .hero-content,
+    .about-content,
+    .approach-content,
+    .contact-content,
+    .page-header,
+    .page-content,
+    .phase-container,
+    section {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
     nav {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
-        padding: 1rem 2rem;
+        padding: 1rem 1rem;
     }
     
     .mobile-menu-toggle {
         display: block;
         position: absolute;
-        right: 2rem;
+        right: 1rem;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -2183,15 +2201,15 @@ footer {
     }
     
     main {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     
     .hero {
-        padding: 6rem 2rem 4rem;
+        padding: 6rem 1rem 4rem;
     }
     
     .approach-content {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     
     .approach-intro h3 {
@@ -2225,11 +2243,11 @@ footer {
     }
     
     .approach-cta {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
     }
     
     .about-content {
-        padding: 4rem 2rem;
+        padding: 4rem 1rem;
     }
     
     .resource-featured {
@@ -2248,7 +2266,7 @@ footer {
     }
     
     .coming-soon-item {
-        padding: 2.5rem 2rem;
+        padding: 2.5rem 1.5rem;
     }
     
     .steps {
@@ -2257,7 +2275,7 @@ footer {
     }
     
     .footer-content {
-        padding: 0 2rem;
+        padding: 0 1rem;
         gap: 2rem;
     }
     
@@ -2267,7 +2285,7 @@ footer {
     }
     
     .team-section {
-        padding: 4rem 2rem;
+        padding: 4rem 1rem;
     }
     
     .team-photo {
@@ -2284,7 +2302,7 @@ footer {
     .bio-header {
         flex-direction: column;
         text-align: center;
-        padding: 2rem 2rem 1.5rem;
+        padding: 2rem 1.5rem 1.5rem;
         gap: 1rem;
     }
     
@@ -2294,7 +2312,7 @@ footer {
     }
     
     .bio-text {
-        padding: 1.5rem 2rem 2rem;
+        padding: 1.5rem 1.5rem 2rem;
     }
     
     /* Better touch targets for mobile */
@@ -2333,7 +2351,7 @@ footer {
     }
     
     .involvement-item {
-        padding: 2.5rem 2rem;
+        padding: 2.5rem 1.5rem;
     }
     
     .involvement-number {
@@ -2354,11 +2372,11 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
-        padding: 2rem;
+        padding: 2rem 1.5rem;
     }
     
     .phase-content {
-        padding: 0 2rem 2rem;
+        padding: 0 1.5rem 2rem;
     }
     
     .phase-header h4 {
@@ -2366,7 +2384,7 @@ footer {
     }
     
     .call-to-action {
-        padding: 4rem 2rem;
+        padding: 4rem 1rem;
     }
     
     .call-to-action h3 {
