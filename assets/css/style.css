@@ -2251,6 +2251,8 @@ footer {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 2rem 0.5rem !important;
+        margin: 0 !important;
     }
     
     main {
@@ -2329,13 +2331,44 @@ footer {
         border-radius: 8px !important;
     }
     
-    /* Contact form and content spacing */
+    /* Mobile contact page specific fixes */
+    .contact-info-detailed,
+    .contact-form-section {
+        background: var(--warm-white) !important;
+        padding: 2rem 1rem !important;
+        margin: 0 !important;
+        border: 1px solid rgba(182, 174, 163, 0.1) !important;
+        border-radius: 8px !important;
+    }
+    
+    .contact-info-detailed h3,
+    .contact-form-section h3 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
     .contact-item {
         margin-bottom: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .contact-item h4 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.8rem !important;
+        color: var(--primary-beige) !important;
     }
     
     .contact-item p {
         margin-bottom: 0.5rem !important;
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .contact-item a {
+        font-weight: 500 !important;
+        color: var(--dark-brown) !important;
+        text-decoration: none !important;
     }
     
     /* Step content better formatting */
@@ -2357,21 +2390,87 @@ footer {
         margin-bottom: 0.8rem !important;
     }
     
-    /* Form elements better spacing */
-    .form-group {
+    /* Mobile contact form improvements */
+    .contact-form .form-group {
         margin-bottom: 1.5rem !important;
     }
     
-    .form-group label {
+    .contact-form label {
         font-size: 1rem !important;
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.8rem !important;
         display: block !important;
+        font-weight: 500 !important;
+        color: var(--dark-brown) !important;
     }
     
-    input, textarea, select {
+    .contact-form input,
+    .contact-form textarea, 
+    .contact-form select {
+        width: 100% !important;
         font-size: 1.1rem !important;
-        padding: 1rem !important;
+        padding: 1.2rem !important;
         line-height: 1.4 !important;
+        border: 1px solid var(--light-taupe) !important;
+        border-radius: 6px !important;
+        background-color: var(--off-white) !important;
+        font-family: 'Lora', serif !important;
+        box-sizing: border-box !important;
+    }
+    
+    .contact-form textarea {
+        min-height: 120px !important;
+        resize: vertical !important;
+    }
+    
+    .submit-button {
+        width: 100% !important;
+        padding: 1.2rem 2rem !important;
+        font-size: 1.1rem !important;
+        background-color: var(--primary-beige) !important;
+        color: var(--dark-brown) !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Mobile contact page other sections */
+    .meeting-info,
+    .encouragement-contact,
+    .social-media {
+        padding: 3rem 0.5rem !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+    
+    .meeting-info h3,
+    .encouragement-contact h3,
+    .social-media h3 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .meeting-info h4 {
+        font-size: 1.4rem !important;
+        margin: 2rem 0 1rem 0 !important;
+        color: var(--primary-beige) !important;
+    }
+    
+    .meeting-info ul {
+        text-align: left !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        padding-left: 1.5rem !important;
+    }
+    
+    .meeting-info li {
+        margin-bottom: 1rem !important;
+        font-size: 1.1rem !important;
+        line-height: 1.7 !important;
     }
     
     .resource-featured {
