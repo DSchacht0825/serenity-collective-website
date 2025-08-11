@@ -25,12 +25,22 @@ exports.handler = async (event, context) => {
             };
         }
 
-        // Test simple API call to get account info
-        const response = await fetch('https://api.brevo.com/v3/account', {
-            method: 'GET',
+        // Test the contacts endpoint we actually use
+        const response = await fetch('https://api.brevo.com/v3/contacts', {
+            method: 'POST',
             headers: {
+                'Content-Type': 'application/json',
                 'api-key': apiKey
-            }
+            },
+            body: JSON.stringify({
+                email: 'test@example.com',
+                attributes: {
+                    FIRSTNAME: 'Test',
+                    LASTNAME: 'User'
+                },
+                listIds: [4],
+                updateEnabled: true
+            })
         });
 
         const result = await response.json();
@@ -43,7 +53,9 @@ exports.handler = async (event, context) => {
                 api_key_present: !!apiKey,
                 api_key_length: apiKey ? apiKey.length : 0,
                 api_response_status: response.status,
-                account_info: response.ok ? { email: result.email } : 'Failed to fetch'
+                response_ok: response.ok,
+                result: result,
+                api_key_start: apiKey ? apiKey.substring(0, 8) + '...' : 'none'
             })
         };
 
