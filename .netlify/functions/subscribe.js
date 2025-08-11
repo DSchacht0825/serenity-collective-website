@@ -18,8 +18,7 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 405,
         headers,
-        body: JSON.stringify({ error: 'Method not 
-  allowed' })
+        body: JSON.stringify({ error: 'Method not allowed' })
       };
     }
 
@@ -39,18 +38,13 @@ exports.handler = async (event, context) => {
       };
 
       // Add optional fields
-      if (data.city) contactData.attributes.CITY =
-  data.city;
-      if (data.state) contactData.attributes.STATE =
-  data.state;
-      if (data.phone) contactData.attributes.PHONE =
-  data.phone;
-      if (data.interests)
-  contactData.attributes.INTERESTS = data.interests;
+      if (data.city) contactData.attributes.CITY = data.city;
+      if (data.state) contactData.attributes.STATE = data.state;
+      if (data.phone) contactData.attributes.PHONE = data.phone;
+      if (data.interests) contactData.attributes.INTERESTS = data.interests;
 
       // Call Brevo API
-      const response = await
-  fetch('https://api.brevo.com/v3/contacts', {
+      const response = await fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,8 +60,7 @@ exports.handler = async (event, context) => {
           headers,
           body: JSON.stringify({
             success: true,
-            message: 'Welcome to our community! Check 
-  your email for confirmation.'
+            message: 'Welcome to our community! Check your email for confirmation.'
           })
         };
       }
@@ -88,8 +81,7 @@ exports.handler = async (event, context) => {
       return {
         statusCode: 400,
         headers,
-        body: JSON.stringify({ error: 'Subscription 
-  failed' })
+        body: JSON.stringify({ error: 'Subscription failed' })
       };
 
     } catch (error) {
