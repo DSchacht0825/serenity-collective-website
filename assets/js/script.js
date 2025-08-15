@@ -71,9 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Contact Form Handler
+// Contact Form Handler - DISABLED FOR FORMSPREE
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.querySelector('.contact-form-DISABLED');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
