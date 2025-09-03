@@ -463,6 +463,23 @@ async function submitContactForm(formData, form) {
     }
 }
 
+// Pilot Group Notice Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const pilotGroupCheckbox = document.getElementById('pilot-group');
+    const pilotGroupNotice = document.getElementById('pilot-group-notice');
+    
+    if (pilotGroupCheckbox && pilotGroupNotice) {
+        pilotGroupCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                pilotGroupNotice.style.display = 'block';
+                pilotGroupNotice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                pilotGroupNotice.style.display = 'none';
+            }
+        });
+    }
+});
+
 // Console welcome message
 console.log(`
 🕊️ Welcome to Serenity Collective
