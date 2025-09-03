@@ -465,18 +465,28 @@ async function submitContactForm(formData, form) {
 
 // Pilot Group Notice Toggle
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Looking for pilot group elements...');
     const pilotGroupCheckbox = document.getElementById('pilot-group');
     const pilotGroupNotice = document.getElementById('pilot-group-notice');
     
+    console.log('Pilot checkbox found:', pilotGroupCheckbox);
+    console.log('Pilot notice found:', pilotGroupNotice);
+    
     if (pilotGroupCheckbox && pilotGroupNotice) {
+        console.log('Both elements found, adding event listener');
         pilotGroupCheckbox.addEventListener('change', function() {
+            console.log('Checkbox changed, checked:', this.checked);
             if (this.checked) {
                 pilotGroupNotice.style.display = 'block';
+                console.log('Notice shown');
                 pilotGroupNotice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
                 pilotGroupNotice.style.display = 'none';
+                console.log('Notice hidden');
             }
         });
+    } else {
+        console.log('Elements not found!');
     }
 });
 

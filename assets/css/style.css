@@ -2809,3 +2809,48 @@ footer {
         text-align: center;
     }
 }
+
+/* Pilot Group Notice Styles */
+.pilot-group-notice {
+    background: #f8f9fa;
+    border: 2px solid var(--primary-beige);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.pilot-group-notice .notice-content h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-brown);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.pilot-group-notice .notice-content p {
+    color: var(--dark-brown);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.pilot-group-notice .notice-content a {
+    color: var(--primary-beige);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.pilot-group-notice .notice-content a:hover {
+    color: var(--deep-taupe);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
