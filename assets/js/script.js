@@ -194,20 +194,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Bio data for each team member
     const bioData = {
         marissa: {
-            name: 'Marissa Ower',
-            role: 'Director of Curriculum, Training, and Design',
+            name: 'Marissa Cahill Ower',
+            role: 'Recovery specialist, curriculum designer, and pilot facilitator',
             photo: '../Images/marissa.jpg',
-            bio: `<p>Marissa Cahill Ower holds a B.A. in Psychology with a minor in Biblical Studies and is a certified Substance Abuse Counselor with over 11 years of experience walking alongside individuals in recovery. Marissa has been co-leading Serenity groups for the past five years and currently serves as the Director of Curriculum, Training, and Design.</p>
-                  <p>Marissa first encountered Jesus in a powerful and life-changing way at the age of 18, marking the beginning of her spiritual journey. Coming from a family with a long history of alcoholism and facing her own struggles with addiction and mental health, she later found deeper healing, growth, and restoration through working the 12 biblical steps in recovery.</p>
-                  <p>Now sober for 11 years, Marissa is passionate about helping others encounter the same hope and wholeness she has found in Christ. Through her role on the Serenity team, she develops curriculum and training that equips leaders and participants to grow in truth, grace, and a renewed identity in Jesus.</p>`
+            bio: `<p>Marissa Cahill Ower is a certified Substance Abuse Counselor with over 11 years of experience walking alongside individuals in recovery. She holds a B.A. in Psychology with a minor in Biblical Studies. Marissa has been co-leading Serenity groups for five years. She first encountered Jesus in a powerful and life-changing way at the age of 18, marking the beginning of her spiritual journey. Coming from a family with a long history of alcoholism and facing her own struggles with addiction and mental health, she later found deeper healing, growth, and restoration through working the 12 steps in recovery. Sober for 11 years, Marissa is passionate about helping others encounter the hope and wholeness in Christ that she has experienced, growing in truth, grace, and renewed identity.</p>
+                  <p>As a core contributor to The Serenity Project, she leads curriculum development and training.</p>`
         },
         michael: {
             name: 'Michael Amodeo',
             role: 'Project manager and pilot facilitator',
             photo: '../Images/michael.jpg',
-            bio: `<p>Michael Amodeo is a Pastor and marketplace business owner. He has been in ministry serving the local Church, people in recovery, and assisting individuals/businesses with their finances from a Kingdom perspective for over 20 years. With a background in finance, accounting, sales expertise, and sobriety he provides spiritual direction, training, and coaching for many in their personal and career development.</p>
-                  <p>Michael has a Bachelors in Finance/Accounting and a Masters in Ministry. Michael has been sober from all mind-altering substances for over 20 years. Michael has been an integral part of this project based on his ministry and 12-step experience since the beginning over 3 years ago. He has experienced a charmed life beyond his wildest dreams due to his obedience to Christ, God's Word, and his intimate relationship with the Holy Spirit.</p>
-                  <p>Michael is passionate in helping others achieve freedom from addictions and coming alongside others in the marketplace so that business reflects Kingdom. For the Serenity Project, Michael is helping facilitate as the project manager coming alongside others so that the masses could experience belief and trust in Jesus and true freedom. He lives in Oceanside San Diego with his wife and is the Executive Pastor of Discovery Church and Vice President of Straight Shooter Heating and Cooling a local HVAC company.</p>`
+            bio: `<p>Michael Amodeo is the Executive pastor of Discovery church in Carlsbad and the Vice President of Straight Shooter Heating and Cooling. Michael is passionate about helping others achieve freedom from addictions, informed by his own 12-step experience. He co-facilitates weekly Serenity Groups, guiding people towards belief and trust in Jesus and true freedom. He has been sober from all mind-altering substances for over 20 years and claims a charmed life beyond his wildest dreams, which he attributes to God's grace, obedience to Christ, commitment to scripture, and an intimate relationship with the Holy Spirit. With a background in finance, accounting, and sales, he also mentors and coaches marketplace leaders to reflect kingdom values in their businesses. He has a Bachelor's degree in Finance/Accounting and a Master's degree in Ministry, and lives in Oceanside with his wife Stephanie.</p>
+                  <p>As a core contributor to The Serenity Project, he leads project management and finance.</p>`
         },
         daniel: {
             name: 'Daniel Schacht',
@@ -220,25 +218,22 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Chris Kohlbry',
             role: 'Key initiator, team leader, fundraising manager, and facilitation trainer',
             photo: '../Images/chris.jpg',
-            bio: `<p>Chris Kohlbry brings 48 years of personal sobriety and ministry experience dedicated in large part to those seeking restoration and ongoing recovery from addiction. Chris' expertise in developing small group community along with a dynamic commitment to seeing people healed by the grace of Jesus led to the first "Serenity" group over 25 years ago.</p>
-                  <p>Teaching Scripture and encouraging others to let Jesus love them has led Chris to explore serving and planting congregations with a variety of ministry expressions across the United States and the globe. Chris resides in Carlsbad, California with his wife, Pam.</p>
-                  <p>For the Serenity Project he is helping to bring leadership as a facilitation trainer and a fundraising initiator.</p>`
+            bio: `<p>Chris Kohlbry's expertise in developing small group communities, along with a dynamic commitment to seeing people healed by the grace of Jesus led to the first "Serenity" group over 25 years ago. Chris brings 48 years of personal sobriety to the project, along with extensive ministry experience dedicated to those seeking restoration and ongoing recovery from addiction. He is passionate about teaching Scripture and encouraging others to let Jesus love them. He has served and planted congregations with a variety of ministry expressions across the United States and around the world. He resides in Carlsbad, California, with his wife, Pam.</p>
+                  <p>As a core contributor to The Serenity Project, he leads the team, manages fundraising, and provides theological mentoring and facilitation training.</p>`
         },
         steve: {
             name: 'Steve Cahill',
-            role: 'Technical Support and Behind-the-Scenes Operations',
+            role: 'Technical support and operations',
             photo: '../Images/steve.jpg',
-            bio: `<p>Steve Cahill has spent over 30 years in the semiconductor industry as a Test Engineer, specializing in writing test programs and developing hardware for the Automated Test Equipment (ATE) sector. He holds both Bachelor's and Master's degrees in Electrical Engineering.</p>
-                  <p>While Steve's professional path has been highly technical, his heart has been drawn toward a different kind of mission: walking alongside those who struggle with addiction. Later in life, Steve renewed his faith as a devoted follower of Jesus—a turning point that reshaped his priorities and deepened his compassion for others.</p>
-                  <p>Though he has no formal training in the recovery field, Steve's life has been touched by close friends and loved ones who have battled substance abuse—and overcome it. Their journeys, especially those rooted in Christ-centered recovery, have deeply inspired him. Today, Steve actively serves through his church and volunteers at Christian events across Southern California, seeking to support and uplift those on the path to healing.</p>`
+            bio: `<p>Steve Cahill has spent over 30 years in the semiconductor industry as a Test Engineer, specializing in writing test programs and developing hardware for the Automated Test Equipment (ATE) sector. He holds Bachelor's and Master's degrees in Electrical Engineering. While Steve's professional path has been highly technical, his heart has been drawn towards walking alongside those who struggle with addiction. His life has been touched by close friends and loved ones who have battled substance abuse—and overcome it. Their journeys, especially those rooted in Christ-centered recovery, have deeply inspired him. Later in life, Steve renewed his faith as a follower of Jesus, a turning point that reshaped his priorities and deepened his compassion for others. Steve serves through his church and at Christian events across Southern California, seeking to support and uplift those on the path to healing.</p>
+                  <p>As a core contributor to The Serenity Project, he provides technical and operational support and encouragement to the team.</p>`
         },
         mark: {
             name: 'Mark Scandrette',
             role: 'Design and curriculum consultant, writer, and facilitation trainer',
             photo: '../Images/mark-1.jpg',
-            bio: `<p>Mark Scandrette is an internationally recognized specialist in practical spiritual formation. With a background in both psychology and theology, he provides spiritual direction, leads practical discipleship groups, and trains and coaches leaders to facilitate and create new small group resources. Mark also teaches in the Doctoral Department at Fuller Seminary.</p>
-                  <p>He is the author of five books, including Practicing the Way of Jesus, The Ninefold Path of Jesus, FREE, and Belonging and Becoming: Creating a Thriving Family Culture. Mark is passionate about taking an honest and active approach to discipleship. He has experienced significant healing and growth through this process and supports others to apply the teachings of Jesus to needs in their everyday lives.</p>
-                  <p>For the Serenity Project, Mark is providing guidance on the design and facilitation of Serenity Groups. He lives in San Francisco with his family and is the executive director of ReIMAGINE: a center for living wisdom.</p>`
+            bio: `<p>Mark Scandrette is the executive director of ReIMAGINE: A Center for Living Wisdom. He is an internationally recognized specialist in practical spiritual formation. With a background in both psychology and theology, he leads practical discipleship groups, provides spiritual direction, and trains and coaches leaders to facilitate and create small group resources. Mark also teaches in the Doctoral Department at Fuller Seminary and is a Mental Health First Aid Instructor. He is the author of five books, including Practicing the Way of Jesus, The Ninefold Path of Jesus, FREE, and Belonging and Becoming: Creating a Thriving Family Culture. Mark is passionate about taking an honest and active approach to discipleship. He has experienced significant healing and growth through this process and supports others to apply the teachings of Jesus to the needs and challenges of everyday life.</p>
+                  <p>As a core contributor to The Serenity Project, he guides curriculum development and facilitator training.</p>`
         }
     };
 
