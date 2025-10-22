@@ -104,7 +104,7 @@
                 <div class="coming-soon-item">
                     <h3>Recommended Reading</h3>
                     <p>A curated list of books that have been helpful for others on similar journeys. These resources cover topics of faith, recovery, healing, and personal growth.</p>
-                    <div class="coming-soon-badge">Coming Soon</div>
+                    <button class="view-books-btn">View Recommendations</button>
                 </div>
             </div>
         </section>
@@ -115,6 +115,38 @@
                 <p>"Remember, Jesus meets us exactly where we are, not where we think we should be. Your journey is unique, and there's no shame in taking the first step, no matter how small it may seem."</p>
             </blockquote>
         </section>
+
+        <!-- Books Modal -->
+        <div id="booksModal" class="books-modal">
+            <div class="books-modal-content">
+                <span class="books-modal-close">&times;</span>
+                <h2>Recommended Reading</h2>
+                <div class="books-grid">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://g.christianbook.com/dg/product/cbd/f400/463950.jpg" alt="Abba's Child by Brennan Manning" loading="lazy">
+                        </div>
+                        <div class="book-details">
+                            <h3>Abba's Child</h3>
+                            <p class="book-author">by Brennan Manning</p>
+                            <p class="book-summary">A powerful exploration of identity and belonging in Christ. Manning shares his own struggles with alcoholism and self-loathing, encouraging readers to let go of the "impostor" self and freely accept their identity as beloved children of God. This book reveals how God's unconditional love embraces our imperfections and failures, offering hope and healing for those on a recovery journey.</p>
+                            <a href="https://www.amazon.com/Abbas-Child-Heart-Intimate-Belonging/dp/1631463950" target="_blank" rel="noopener noreferrer" class="book-link">View on Amazon</a>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://g.christianbook.com/dg/product/cbd/f400/078757.jpg" alt="My Utmost for His Highest by Oswald Chambers" loading="lazy">
+                        </div>
+                        <div class="book-details">
+                            <h3>My Utmost for His Highest</h3>
+                            <p class="book-author">by Oswald Chambers</p>
+                            <p class="book-summary">One of the most beloved devotionals in the Christian world for over 80 years. This classic offers 366 daily Scripture-inspired readings that draw readers closer to God. Each entry combines encouragement with challenge, inspiring deeper discipleship through reflections on surrender, obedience, and intimate relationship with Christ. Perfect for daily meditation and spiritual growth.</p>
+                            <a href="https://www.amazon.com/Utmost-His-Highest-Oswald-Chambers/dp/0929239571" target="_blank" rel="noopener noreferrer" class="book-link">View on Amazon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -153,5 +185,48 @@
     </footer>
 
     <script src="../assets/js/script.js"></script>
+    <script>
+        // Books Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('booksModal');
+            const openBtn = document.querySelector('.view-books-btn');
+            const closeBtn = document.querySelector('.books-modal-close');
+
+            // Make sure elements exist
+            if (!modal || !openBtn || !closeBtn) {
+                return;
+            }
+
+            // Open modal
+            function openBooksModal() {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close modal
+            function closeBooksModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            // Button click handlers
+            openBtn.addEventListener('click', openBooksModal);
+            closeBtn.addEventListener('click', closeBooksModal);
+
+            // Close when clicking outside modal
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeBooksModal();
+                }
+            });
+
+            // Close with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.style.display === 'block') {
+                    closeBooksModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

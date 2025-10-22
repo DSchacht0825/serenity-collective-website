@@ -25,6 +25,128 @@ body {
     color: var(--dark-brown);
     background-color: var(--off-white);
     font-weight: 400;
+    overflow-x: hidden;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Modern Animation System */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animation utility classes */
+.animate-on-scroll {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animated {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Page transition effect */
+body {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Header and Navigation */
@@ -190,15 +312,35 @@ main {
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(182, 174, 163, 0.3);
     border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+    width: 300px;
+    height: 300px;
 }
 
 .cta-button:hover {
     background-color: var(--deep-taupe);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(182, 174, 163, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(182, 174, 163, 0.5);
 }
 
 /* Page Header */
@@ -757,7 +899,8 @@ body:has([title*="Contact"]) .page-header::before {
     padding: 3rem 2.5rem;
     border: 1px solid rgba(182, 174, 163, 0.1);
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .coming-soon-item::before {
@@ -2852,5 +2995,228 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Books Modal Styles */
+.view-books-btn {
+    background-color: var(--primary-beige);
+    color: var(--dark-brown);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 3;
+}
+
+.view-books-btn:hover {
+    background-color: var(--deep-taupe);
+    color: var(--warm-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.books-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.books-modal-content {
+    background-color: var(--warm-white);
+    margin: 3% auto;
+    padding: 2.5rem;
+    border-radius: 8px;
+    max-width: 1200px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.books-modal-close {
+    color: var(--dark-brown);
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.books-modal-close:hover,
+.books-modal-close:focus {
+    color: var(--primary-beige);
+}
+
+.books-modal-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--dark-brown);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.book-card {
+    display: flex;
+    gap: 1.5rem;
+    background-color: var(--off-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.book-image {
+    flex: 0 0 150px;
+}
+
+.book-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-details h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--dark-brown);
+    margin-bottom: 0.3rem;
+}
+
+.book-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    color: var(--primary-beige);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.book-summary {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--dark-brown);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.book-link {
+    display: inline-block;
+    background-color: var(--primary-beige);
+    color: var(--dark-brown);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.book-link:hover {
+    background-color: var(--deep-taupe);
+    color: var(--warm-white);
+    transform: translateX(5px);
+}
+
+/* Responsive Styles for Books Modal */
+@media (max-width: 768px) {
+    .books-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+        margin: 5% auto;
+    }
+
+    .books-modal-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .book-card {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .book-image {
+        flex: 0 0 auto;
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    .book-details h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .book-author {
+        text-align: center;
+    }
+
+    .book-summary {
+        font-size: 0.9rem;
+    }
+
+    .book-link {
+        align-self: center;
+    }
+
+    .books-modal-close {
+        right: 1rem;
+        top: 1rem;
+        font-size: 1.8rem;
     }
 }

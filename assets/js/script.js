@@ -485,6 +485,74 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Modern Scroll Animation System
+document.addEventListener('DOMContentLoaded', function() {
+    // Add page load animations
+    const pageHeader = document.querySelector('.page-header');
+    if (pageHeader) {
+        pageHeader.classList.add('fade-in-down');
+    }
+
+    // Add staggered animations to grid items FIRST
+    const gridItems = document.querySelectorAll('.coming-soon-item, .resource-item, .approach-item, .team-member, .contact-item');
+    gridItems.forEach((item, index) => {
+        item.classList.add('animate-on-scroll');
+        item.style.transitionDelay = `${index * 0.1}s`;
+    });
+
+    // Intersection Observer for scroll animations - set up AFTER adding classes
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                // Optional: unobserve after animation
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with animate-on-scroll class (now they exist!)
+    document.querySelectorAll('.animate-on-scroll').forEach(element => {
+        observer.observe(element);
+    });
+});
+
+// Smooth parallax effect for hero sections
+document.addEventListener('DOMContentLoaded', function() {
+    const hero = document.querySelector('.hero, .page-header');
+
+    if (hero) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+
+            if (hero) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+    }
+});
+
+// Enhanced hover effects for cards
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.coming-soon-item, .book-card, .team-member, .approach-item');
+
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+});
+
 // Console welcome message
 console.log(`
 🕊️ Welcome to Serenity Collective
