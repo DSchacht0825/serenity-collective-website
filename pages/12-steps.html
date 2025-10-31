@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 12 Steps | Jesus-Centered Recovery | Serenity Collective</title>
+    <meta name="description" content="Explore our Jesus-centered 12 steps for recovery and healing. Each step is grounded in biblical principles and scripture, guiding you toward restoration and freedom in Christ.">
+    <meta name="keywords" content="12 steps, Christian recovery, Jesus-centered 12 steps, faith-based recovery, biblical recovery steps, Christian addiction recovery">
+
+    <link rel="canonical" href="https://serenitycollective.org/pages/12-steps.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        main {
+            background: url('../Images/hero12.jpg') center/cover no-repeat fixed;
+            position: relative;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(247, 247, 245, 0.85);
+            z-index: 0;
+        }
+
+        .page-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .steps-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .orientation-card {
+            background: var(--warm-white);
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-taupe);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .orientation-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--soft-gray-green);
+            margin-bottom: 15px;
+        }
+
+        .orientation-card .subtitle {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--deep-taupe);
+            margin-bottom: 20px;
+        }
+
+        .orientation-card .scripture {
+            font-size: 1.1rem;
+            color: var(--dark-brown);
+            opacity: 0.8;
+        }
+
+        .step-card {
+            background: var(--warm-white);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--primary-beige);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(182,174,163,0.03) 0%, rgba(139,164,169,0.03) 100%);
+            pointer-events: none;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            border-left-color: var(--soft-gray-green);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--soft-gray-green);
+            min-width: 80px;
+            margin-right: 25px;
+            line-height: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .step-subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--soft-gray-green);
+            margin-bottom: 15px;
+        }
+
+        .framing-text {
+            background: var(--off-white);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 3px solid var(--soft-gray-green);
+        }
+
+        .framing-text strong {
+            color: var(--soft-gray-green);
+            font-weight: 600;
+        }
+
+        .framing-text p {
+            margin: 5px 0;
+            color: var(--dark-brown);
+            font-size: 1.05rem;
+        }
+
+        .supporting-texts {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-taupe);
+        }
+
+        .supporting-texts strong {
+            color: var(--deep-taupe);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .supporting-texts p {
+            color: var(--dark-brown);
+            opacity: 0.85;
+            font-size: 1rem;
+            margin-top: 8px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--light-taupe) 100%);
+            margin-top: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-brown);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--dark-brown);
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--soft-gray-green);
+            color: var(--warm-white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-beige);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .orientation-card {
+                padding: 30px 20px;
+            }
+
+            .orientation-card h2 {
+                font-size: 2rem;
+            }
+
+            .step-card {
+                padding: 25px;
+            }
+
+            .step-header {
+                flex-direction: column;
+            }
+
+            .step-number {
+                margin-bottom: 15px;
+            }
+
+            .step-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu nav-left">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="approach.html">Serenity Groups</a></li>
+                <li><a href="12-steps.html" class="active">The 12 Steps</a></li>
+            </ul>
+            <div class="logo">
+                <img src="../assets/images/Sserenity-collective-logo.png" alt="Serenity Collective Logo" class="logo-image">
+            </div>
+            <ul class="nav-menu nav-right">
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.reimagine.org/support" class="give-now-link" target="_blank" rel="noopener noreferrer">Give Now</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                ☰
+            </button>
+        </nav>
+
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+            <ul class="mobile-nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="approach.html">Serenity Groups</a></li>
+                <li><a href="12-steps.html" class="active">The 12 Steps</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://www.reimagine.org/support" class="give-now-link" target="_blank" rel="noopener noreferrer">Give Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>The 12 Steps</h1>
+            <p>A Jesus-centered journey toward healing, restoration, and freedom</p>
+        </section>
+
+        <div class="steps-container">
+            <!-- Orientation -->
+            <div class="orientation-card">
+                <h2>Orientation</h2>
+                <p class="subtitle">"Discovering Serenity in the Storms of Our Lives"</p>
+                <p class="scripture">Matthew 8:23-27, Mark 4:35-41 & Luke 8:22-25</p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're realizing we're powerless over our unhealthy dependencies—that our lives have become unmanageable.</h3>
+                        <p class="step-subtitle">"Coming to Our Senses."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Luke 15:11-15 — a lost son and an extravagant father.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Romans 7:18-19, II Corinthians 12:9-10 & Matthew 5:3</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're coming to believe Jesus can restore us to sanity.</h3>
+                        <p class="step-subtitle">"I Can't. I Think Jesus Can."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Mark 9:14-27 — a desperate dad venturing to believe.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Colossians 1:15-20, Psalm 23:1-3 & II Timothy 1:7</p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're making a decision to turn our will and our lives over to the care of Jesus.</h3>
+                        <p class="step-subtitle">"Turning It Over to Jesus."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Matthew 6:25-34 — no need to worry.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Psalm 56:34, Romans 6:23, Matthew 11:28-30, I Peter 5:7, Revelation 3:20</p>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're learning how to fearlessly surrender to Jesus as He searches the moral depths of our lives.</h3>
+                        <p class="step-subtitle">"Jesus Knows It All."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>John 4:1-26 — a woman at a well.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Mark 7:20-23, Psalm 139:23-24, II Samuel 12:1-13</p>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're getting honest with Jesus, ourselves and others about the exact nature of our moral brokenness.</h3>
+                        <p class="step-subtitle">"Honest to God."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Luke 18:9-14 — a broken man willing to be honest about his shortcomings.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>I John 1:5-10, Proverbs 20:9/I Timothy 1:15-16, James 5:16</p>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're willing to let Jesus make us well.</h3>
+                        <p class="step-subtitle">"Do I Want to Get Well?"</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>John 5:1-8 — a crippled man and a question.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Psalm 139:13-14, Romans 3:23-24, Exodus 15:26, I Peters 2:24</p>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">07</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're ready to believe Jesus forgives us.</h3>
+                        <p class="step-subtitle">"Living Forgiven."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Mark 2:1-12 — Jesus displays His authority to forgive.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Luke 23:34, Psalm 103:8-12, Colossians 2:13, John 6:29, 63 (nlt)</p>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">08</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're willing to make amends to all those we have harmed as Jesus leads us.</h3>
+                        <p class="step-subtitle">"Payback."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Luke 19:1-10 — when Jesus came to a tax collector's house.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Proverbs 14:9</p>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">09</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're actively seeking to repair broken relationships with others as Jesus directs us.</h3>
+                        <p class="step-subtitle">"Go. Be Reconciled."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Matthew 5:23-24 — Jesus' directive on the priority of being reconciled to others.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Romans 12:18</p>
+                </div>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">10</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're willing to promptly admit when we're wrong as Jesus reveals it.</h3>
+                        <p class="step-subtitle">"Finding the Courage to Be Wrong."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Luke 22:54-62 — the pain of a follower's failure.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>James 3:2, Proverbs 16:18, Proverbs 28:13</p>
+                </div>
+            </div>
+
+            <!-- Step 11 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">11</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're holding on to our relationship with Jesus.</h3>
+                        <p class="step-subtitle">"Hold On!"</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>John 15:5 — holding on to the One who holds us.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>John 15:7-9, John 15:10-11, John 15:12-14</p>
+                </div>
+            </div>
+
+            <!-- Step 12 -->
+            <div class="step-card">
+                <div class="step-header">
+                    <div class="step-number">12</div>
+                    <div class="step-content">
+                        <h3 class="step-title">We're carrying Jesus' message of love and healing to others.</h3>
+                        <p class="step-subtitle">"Freely Received. Freely Given."</p>
+                    </div>
+                </div>
+                <div class="framing-text">
+                    <strong>Framing Text:</strong>
+                    <p>Matthew 10:8 — the more we receive, the more we have to give.</p>
+                </div>
+                <div class="supporting-texts">
+                    <strong>Supporting Texts:</strong>
+                    <p>Galatians 6:2, Acts 1:8, John 1:41-42</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2>Ready to Begin Your Journey?</h2>
+            <p>Join us in walking through these 12 steps together in a supportive, Jesus-centered community.</p>
+            <a href="get-involved.html" class="cta-button">Get Involved</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-center">
+                <p>Email: <a href="mailto:info@serenitycollective.org">info@serenitycollective.org</a> | Phone: <a href="tel:619-300-8337">619-300-8337</a></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61577737362489" aria-label="Follow us on Facebook" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 1H10.5A3.5 3.5 0 0 0 7 4.5V7H5v2h2v6h2V9h2.5l.5-2H9V4.5A1.5 1.5 0 0 1 10.5 3H13V1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/s3renitycollective/" aria-label="Follow us on Instagram" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="2" width="12" height="12" rx="3"/>
+                            <circle cx="8" cy="8" r="3"/>
+                            <circle cx="12.5" cy="3.5" r="0.5" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/S3r3n1tyco" aria-label="Follow us on X (Twitter)" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12.6 2h2.4l-5.2 6L15 14h-4.8l-3.8-5L2.8 14H0.4l5.6-6.4L1 2h4.9l3.4 4.5L12.6 2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/108115555/admin/dashboard/" aria-label="Connect with us on LinkedIn" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="2" width="12" height="12" rx="2"/>
+                            <path d="M6 9v4M6 6.5a.5.5 0 0 1 1 0V9a2 2 0 0 0 4 0V6.5"/>
+                            <circle cx="4" cy="4" r="0.5" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+                <p>&copy; 2025 Serenity Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
